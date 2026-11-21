@@ -90,7 +90,7 @@
     <button type="button" data-kind="avg" class="on">平均</button>
     <button type="button" data-kind="med">中央値</button>
   </div>
-  <p class="hint">平均は、とても高い治療をした子に引っぱられて高めに出ます。中央値は「100頭並べたときの真ん中の子」の金額で、よくある金額に近い数字です。</p>
+  <p class="hint">平均は、とても高い治療をした子に引っぱられて高めに出ます。中央値は、100頭を金額の順に並べたときの「真ん中の子」の金額で、よくある金額に近い数字です。</p>
 
   <div class="cards">
     <div class="card">
@@ -183,13 +183,13 @@
     var sum = 0;
     for (var i = age; i <= 15; i++) sum += data[i];
     var years = 16 - age;
-    document.getElementById("sumLabel").textContent = age + "歳から15歳までの合計（" + kindName + "を足した数）";
+    document.getElementById("sumLabel").textContent = age + "歳から15歳までの合計（毎年の" + kindName + "を足した金額）";
     document.getElementById("sumNum").textContent = yen(sum);
     document.getElementById("sumSub").textContent = years + "年分。一度に払うわけではなく、少しずつ使っていくお金です";
 
     var months = years * 12;
     document.getElementById("monthNum").textContent = yen(sum / months);
-    document.getElementById("monthSub").textContent = "合計を" + months + "か月で割った数です";
+    document.getElementById("monthSub").textContent = "合計を" + months + "か月で割った金額です";
 
     var max = Math.max.apply(null, AVG);
     var rows = "";
